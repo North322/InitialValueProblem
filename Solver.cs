@@ -3,7 +3,7 @@ using System;
 
 namespace InitialValueProblem
 {
-    public enum Behavior : byte { FinishAtTheLeftBorder = 1, FinishAfterLeftBorder, FinishBeforeLeftBorder };
+    public enum Behavior : byte { FinishAtTheRightBorder = 1, FinishAfterRightBorder, FinishBeforeRightBorder };
     public enum Type : byte { EulerSolver = 1, HoinSolver };
     public abstract class Solver
     {
