@@ -47,6 +47,7 @@ namespace InitialValueProblem
             }
             catch (Exception error)
             {
+                return null;
                 // Show popup
             }
         }
