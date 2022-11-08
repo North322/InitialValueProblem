@@ -711,7 +711,7 @@
         private System.Windows.Forms.TextBox t0TextBox;
         private System.Windows.Forms.Label hLabel;
         private System.Windows.Forms.TextBox hTextBox;
-        private System.Windows.Forms.Button SolveButton;
+        private System.Windows.Forms.Button SolveButton; 
         private System.Windows.Forms.Label y0Label;
         private System.Windows.Forms.TextBox y0TextBox;
         private System.Windows.Forms.Panel DeleteSolverPanel;
