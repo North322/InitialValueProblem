@@ -10,17 +10,6 @@ using System.Windows.Forms;
 
 namespace InitialValueProblem
 {
-    public string ListToString(List<Point> List)
-    {
-        string result = "";
-        int i = 0;
-        foreach(Point point in List)
-        {
-            result += $"x{i}: {point.X}  y{i}: {point.Y}\n";
-            i++;
-        }
-        return result;
-    }
     public partial class InitialValueProblemView : Form
     {
         public InitialValueProblemViewModel ViewModel { get; }
