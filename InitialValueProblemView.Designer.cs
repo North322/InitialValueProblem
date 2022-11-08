@@ -764,7 +764,6 @@
             this.NavigationLayout.ResumeLayout(false);
             this.NavigationLayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
-            this.ContentLayout.ResumeLayout(false);
             this.DeleteSolverPanel.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
