@@ -57,7 +57,7 @@ namespace InitialValueProblem
             }
             catch (Exception error)
             {
-                // Show popup
+                return null; // ToDo: Show popup
             }
         }
     }
