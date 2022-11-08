@@ -1,15 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
+
 namespace InitialValueProblem
 {
-    public class Menu
+    public class InitialValueProblemViewModel
     { 
         // Properties
         public Farm Farm { get; }
         public List<List<Point>> Solutions { get; set; }
         
         // Constructors
-        public Menu()
+        public InitialValueProblemViewModel()
         {
             Farm = new Farm();
             Solutions = new List<List<Point>>();
@@ -18,35 +20,23 @@ namespace InitialValueProblem
         // Methods
         public void AddSolver(string Name, Type Type, Behavior Behavior)
         {
-            try
+            switch (Type)
             {
-                switch (Type)
-                {
-                    case Type.EulerSolver:
-                        Farm.AddSolver(new EulerSolver(Name, Behavior));
-                        break;
-                    case Type.HoinSolver:
-                        Farm.AddSolver(new HoinSolver(Name, Behavior));
-                        break;
-                    default:
-                        // Probably for change
-                        throw new ApplicationException("Wron behavior type!");
-                }
-            } catch(Exception error)
-            {
-                // Show popup
+                case Type.EulerSolver:
+                    Farm.AddSolver(new EulerSolver(Name, Behavior));
+                    break;
+                case Type.HoinSolver:
+                    Farm.AddSolver(new HoinSolver(Name, Behavior));
+                    break;
+                default:
+                    // Probably for change
+                    throw new ApplicationException("Wron behavior type!");
             }
         }
 
         public void DeleteSolver(string Name)
         {
-            try { 
-                Farm.DeleteSolver(Name);
-            }
-            catch (Exception error)
-            {
-                // Shop popup
-            }
+            Farm.DeleteSolver(Name);
         }
 
         public List<List<Point>> SolveTask(InitialValueProblem initialValueProblem)
@@ -57,7 +47,7 @@ namespace InitialValueProblem
             }
             catch (Exception error)
             {
-                return null; // ToDo: Show popup
+                // Show popup
             }
         }
     }

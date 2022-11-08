@@ -28,9 +28,8 @@ namespace InitialValueProblem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new InitialValueProblemView());
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-            Menu menu = new Menu();
         }
     }
 }

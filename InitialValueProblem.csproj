@@ -48,11 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EulerMethod.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="InitialValueProblemView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="InitialValueProblemView.Designer.cs">
+      <DependentUpon>InitialValueProblemView.cs</DependentUpon>
     </Compile>
     <Compile Include="HoinMethod.cs" />
     <Compile Include="InitialValueProblem.cs" />
@@ -61,9 +61,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solver.cs" />
-    <Compile Include="SolversFarm.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Farm.cs" />
+    <EmbeddedResource Include="InitialValueProblemView.resx">
+      <DependentUpon>InitialValueProblemView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
