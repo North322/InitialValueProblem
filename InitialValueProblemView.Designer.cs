@@ -28,25 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.SolversTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.NavigationLayout = new System.Windows.Forms.TableLayoutPanel();
             this.AddSolverNavButton = new System.Windows.Forms.Button();
-            this.AddSolverPanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.AddSolverNameTextBox = new System.Windows.Forms.TextBox();
-            this.BehaviorComboBox = new System.Windows.Forms.ComboBox();
-            this.BehaviorLabel = new System.Windows.Forms.Label();
-            this.TypeComboBox = new System.Windows.Forms.ComboBox();
-            this.AddSolverNameLabel = new System.Windows.Forms.Label();
-            this.typeLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.AddSolverButton = new System.Windows.Forms.Button();
             this.DeleteSolverNavButton = new System.Windows.Forms.Button();
             this.SolveNavButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SolveTaskPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.hTextBox = new System.Windows.Forms.TextBox();
@@ -59,29 +50,38 @@
             this.t0Label = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.SolveButton = new System.Windows.Forms.Button();
-            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.AddSolverPanel = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.AddSolverNameTextBox = new System.Windows.Forms.TextBox();
+            this.BehaviorComboBox = new System.Windows.Forms.ComboBox();
+            this.BehaviorLabel = new System.Windows.Forms.Label();
+            this.TypeComboBox = new System.Windows.Forms.ComboBox();
+            this.AddSolverNameLabel = new System.Windows.Forms.Label();
+            this.typeLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.AddSolverButton = new System.Windows.Forms.Button();
             this.DeleteSolverPanel = new System.Windows.Forms.Panel();
-            this.DeleteSolverButton = new System.Windows.Forms.Button();
-            this.DeleteSolverNameLabel = new System.Windows.Forms.Label();
-            this.DeleteSolverNameTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.DeleteSolverNameTextBox = new System.Windows.Forms.TextBox();
+            this.DeleteSolverNameLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.DeleteSolverButton = new System.Windows.Forms.Button();
+            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.SolversTabControl.SuspendLayout();
             this.NavigationLayout.SuspendLayout();
-            this.AddSolverPanel.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SolveTaskPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
+            this.AddSolverPanel.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.DeleteSolverPanel.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +93,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SolversTabControl.Controls.Add(this.tabPage1);
             this.SolversTabControl.Controls.Add(this.tabPage2);
+            this.SolversTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.SolversTabControl.Location = new System.Drawing.Point(5, 499);
             this.SolversTabControl.Margin = new System.Windows.Forms.Padding(5);
             this.SolversTabControl.Name = "SolversTabControl";
@@ -102,10 +103,10 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1109, 165);
+            this.tabPage1.Size = new System.Drawing.Size(1109, 158);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -115,7 +116,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(485, 178);
+            this.tabPage2.Size = new System.Drawing.Size(1109, 165);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -157,157 +158,6 @@
             this.AddSolverNavButton.UseVisualStyleBackColor = true;
             this.AddSolverNavButton.Click += new System.EventHandler(this.addSolverButton_Click);
             // 
-            // AddSolverPanel
-            // 
-            this.AddSolverPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddSolverPanel.Controls.Add(this.tableLayoutPanel3);
-            this.AddSolverPanel.Location = new System.Drawing.Point(14, 16);
-            this.AddSolverPanel.Name = "AddSolverPanel";
-            this.AddSolverPanel.Size = new System.Drawing.Size(510, 277);
-            this.AddSolverPanel.TabIndex = 1;
-            this.AddSolverPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddSolverPanel_Paint);
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.95216F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.04784F));
-            this.tableLayoutPanel3.Controls.Add(this.AddSolverNameTextBox, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.BehaviorComboBox, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.BehaviorLabel, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.TypeComboBox, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.AddSolverNameLabel, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.typeLabel, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 1, 3);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(5, 18);
-            this.tableLayoutPanel3.MinimumSize = new System.Drawing.Size(400, 250);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 4;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(477, 250);
-            this.tableLayoutPanel3.TabIndex = 21;
-            // 
-            // AddSolverNameTextBox
-            // 
-            this.AddSolverNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddSolverNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddSolverNameTextBox.Location = new System.Drawing.Point(117, 3);
-            this.AddSolverNameTextBox.Name = "AddSolverNameTextBox";
-            this.AddSolverNameTextBox.Size = new System.Drawing.Size(357, 31);
-            this.AddSolverNameTextBox.TabIndex = 0;
-            // 
-            // BehaviorComboBox
-            // 
-            this.BehaviorComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BehaviorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.BehaviorComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BehaviorComboBox.FormattingEnabled = true;
-            this.BehaviorComboBox.Items.AddRange(new object[] {
-            "Finish at the left border",
-            "Finish after left border",
-            "Finish before left border"});
-            this.BehaviorComboBox.Location = new System.Drawing.Point(117, 127);
-            this.BehaviorComboBox.Name = "BehaviorComboBox";
-            this.BehaviorComboBox.Size = new System.Drawing.Size(357, 33);
-            this.BehaviorComboBox.TabIndex = 2;
-            // 
-            // BehaviorLabel
-            // 
-            this.BehaviorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BehaviorLabel.AutoSize = true;
-            this.BehaviorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BehaviorLabel.Location = new System.Drawing.Point(3, 124);
-            this.BehaviorLabel.Name = "BehaviorLabel";
-            this.BehaviorLabel.Size = new System.Drawing.Size(108, 25);
-            this.BehaviorLabel.TabIndex = 5;
-            this.BehaviorLabel.Text = "Behavior";
-            this.BehaviorLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // TypeComboBox
-            // 
-            this.TypeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TypeComboBox.DisplayMember = "EulerSolver";
-            this.TypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TypeComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TypeComboBox.FormattingEnabled = true;
-            this.TypeComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TypeComboBox.Items.AddRange(new object[] {
-            "Euler solver",
-            "Hoin solver"});
-            this.TypeComboBox.Location = new System.Drawing.Point(117, 65);
-            this.TypeComboBox.Name = "TypeComboBox";
-            this.TypeComboBox.Size = new System.Drawing.Size(357, 33);
-            this.TypeComboBox.TabIndex = 1;
-            // 
-            // AddSolverNameLabel
-            // 
-            this.AddSolverNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddSolverNameLabel.AutoSize = true;
-            this.AddSolverNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddSolverNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.AddSolverNameLabel.Name = "AddSolverNameLabel";
-            this.AddSolverNameLabel.Size = new System.Drawing.Size(108, 25);
-            this.AddSolverNameLabel.TabIndex = 3;
-            this.AddSolverNameLabel.Text = "Name";
-            this.AddSolverNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // typeLabel
-            // 
-            this.typeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.typeLabel.AutoSize = true;
-            this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.typeLabel.Location = new System.Drawing.Point(3, 62);
-            this.typeLabel.Name = "typeLabel";
-            this.typeLabel.Size = new System.Drawing.Size(108, 25);
-            this.typeLabel.TabIndex = 4;
-            this.typeLabel.Text = "Type";
-            this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Controls.Add(this.AddSolverButton, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(117, 189);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(357, 58);
-            this.tableLayoutPanel4.TabIndex = 6;
-            // 
-            // AddSolverButton
-            // 
-            this.AddSolverButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddSolverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.75F);
-            this.AddSolverButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.AddSolverButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AddSolverButton.Location = new System.Drawing.Point(244, 3);
-            this.AddSolverButton.Name = "AddSolverButton";
-            this.AddSolverButton.Size = new System.Drawing.Size(110, 33);
-            this.AddSolverButton.TabIndex = 6;
-            this.AddSolverButton.Text = "Add";
-            this.AddSolverButton.UseVisualStyleBackColor = true;
-            this.AddSolverButton.Click += new System.EventHandler(this.AddSolverButton_Click);
-            // 
             // DeleteSolverNavButton
             // 
             this.DeleteSolverNavButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -335,6 +185,19 @@
             this.SolveNavButton.Text = "Solve task";
             this.SolveNavButton.UseVisualStyleBackColor = true;
             this.SolveNavButton.Click += new System.EventHandler(this.solveTask_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.SolveTaskPanel);
+            this.panel1.Controls.Add(this.AddSolverPanel);
+            this.panel1.Controls.Add(this.DeleteSolverPanel);
+            this.panel1.Location = new System.Drawing.Point(3, 198);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(544, 299);
+            this.panel1.TabIndex = 3;
             // 
             // SolveTaskPanel
             // 
@@ -506,71 +369,166 @@
             this.SolveButton.UseVisualStyleBackColor = true;
             this.SolveButton.Click += new System.EventHandler(this.SolveButton_Click);
             // 
-            // chart
+            // AddSolverPanel
             // 
-            this.chart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.AddSolverPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea10.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea10);
-            this.chart.Location = new System.Drawing.Point(563, 3);
-            this.chart.Name = "chart";
-            series10.BorderWidth = 3;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series10.Color = System.Drawing.Color.Red;
-            series10.Name = "Series1";
-            this.chart.Series.Add(series10);
-            this.chart.Size = new System.Drawing.Size(555, 482);
-            this.chart.TabIndex = 3;
-            this.chart.Text = "chart";
+            this.AddSolverPanel.Controls.Add(this.tableLayoutPanel3);
+            this.AddSolverPanel.Location = new System.Drawing.Point(14, 16);
+            this.AddSolverPanel.Name = "AddSolverPanel";
+            this.AddSolverPanel.Size = new System.Drawing.Size(510, 277);
+            this.AddSolverPanel.TabIndex = 1;
+            this.AddSolverPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddSolverPanel_Paint);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.95216F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.04784F));
+            this.tableLayoutPanel3.Controls.Add(this.AddSolverNameTextBox, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.BehaviorComboBox, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.BehaviorLabel, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.TypeComboBox, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.AddSolverNameLabel, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.typeLabel, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 1, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(5, 18);
+            this.tableLayoutPanel3.MinimumSize = new System.Drawing.Size(400, 250);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(477, 250);
+            this.tableLayoutPanel3.TabIndex = 21;
+            // 
+            // AddSolverNameTextBox
+            // 
+            this.AddSolverNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddSolverNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddSolverNameTextBox.Location = new System.Drawing.Point(117, 3);
+            this.AddSolverNameTextBox.Name = "AddSolverNameTextBox";
+            this.AddSolverNameTextBox.Size = new System.Drawing.Size(357, 31);
+            this.AddSolverNameTextBox.TabIndex = 0;
+            // 
+            // BehaviorComboBox
+            // 
+            this.BehaviorComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BehaviorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BehaviorComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BehaviorComboBox.FormattingEnabled = true;
+            this.BehaviorComboBox.Items.AddRange(new object[] {
+            "Finish at the left border",
+            "Finish after left border",
+            "Finish before left border"});
+            this.BehaviorComboBox.Location = new System.Drawing.Point(117, 127);
+            this.BehaviorComboBox.Name = "BehaviorComboBox";
+            this.BehaviorComboBox.Size = new System.Drawing.Size(357, 33);
+            this.BehaviorComboBox.TabIndex = 2;
+            // 
+            // BehaviorLabel
+            // 
+            this.BehaviorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BehaviorLabel.AutoSize = true;
+            this.BehaviorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BehaviorLabel.Location = new System.Drawing.Point(3, 124);
+            this.BehaviorLabel.Name = "BehaviorLabel";
+            this.BehaviorLabel.Size = new System.Drawing.Size(108, 25);
+            this.BehaviorLabel.TabIndex = 5;
+            this.BehaviorLabel.Text = "Behavior";
+            this.BehaviorLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // TypeComboBox
+            // 
+            this.TypeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TypeComboBox.DisplayMember = "EulerSolver";
+            this.TypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TypeComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TypeComboBox.FormattingEnabled = true;
+            this.TypeComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TypeComboBox.Items.AddRange(new object[] {
+            "Euler solver",
+            "Hoin solver"});
+            this.TypeComboBox.Location = new System.Drawing.Point(117, 65);
+            this.TypeComboBox.Name = "TypeComboBox";
+            this.TypeComboBox.Size = new System.Drawing.Size(357, 33);
+            this.TypeComboBox.TabIndex = 1;
+            // 
+            // AddSolverNameLabel
+            // 
+            this.AddSolverNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddSolverNameLabel.AutoSize = true;
+            this.AddSolverNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddSolverNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.AddSolverNameLabel.Name = "AddSolverNameLabel";
+            this.AddSolverNameLabel.Size = new System.Drawing.Size(108, 25);
+            this.AddSolverNameLabel.TabIndex = 3;
+            this.AddSolverNameLabel.Text = "Name";
+            this.AddSolverNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // typeLabel
+            // 
+            this.typeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.typeLabel.AutoSize = true;
+            this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.typeLabel.Location = new System.Drawing.Point(3, 62);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Size = new System.Drawing.Size(108, 25);
+            this.typeLabel.TabIndex = 4;
+            this.typeLabel.Text = "Type";
+            this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.Controls.Add(this.AddSolverButton, 2, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(117, 189);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(357, 58);
+            this.tableLayoutPanel4.TabIndex = 6;
+            // 
+            // AddSolverButton
+            // 
+            this.AddSolverButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddSolverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.75F);
+            this.AddSolverButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AddSolverButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AddSolverButton.Location = new System.Drawing.Point(244, 3);
+            this.AddSolverButton.Name = "AddSolverButton";
+            this.AddSolverButton.Size = new System.Drawing.Size(110, 33);
+            this.AddSolverButton.TabIndex = 6;
+            this.AddSolverButton.Text = "Add";
+            this.AddSolverButton.UseVisualStyleBackColor = true;
+            this.AddSolverButton.Click += new System.EventHandler(this.AddSolverButton_Click);
             // 
             // DeleteSolverPanel
             // 
             this.DeleteSolverPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DeleteSolverPanel.Controls.Add(this.tableLayoutPanel5);
-            this.DeleteSolverPanel.Location = new System.Drawing.Point(16, 26);
+            this.DeleteSolverPanel.Location = new System.Drawing.Point(10, 16);
             this.DeleteSolverPanel.Name = "DeleteSolverPanel";
             this.DeleteSolverPanel.Size = new System.Drawing.Size(511, 228);
             this.DeleteSolverPanel.TabIndex = 20;
-            // 
-            // DeleteSolverButton
-            // 
-            this.DeleteSolverButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteSolverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.75F);
-            this.DeleteSolverButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DeleteSolverButton.Location = new System.Drawing.Point(263, 3);
-            this.DeleteSolverButton.Name = "DeleteSolverButton";
-            this.DeleteSolverButton.Size = new System.Drawing.Size(107, 33);
-            this.DeleteSolverButton.TabIndex = 13;
-            this.DeleteSolverButton.Text = "Delete";
-            this.DeleteSolverButton.UseVisualStyleBackColor = true;
-            this.DeleteSolverButton.Click += new System.EventHandler(this.DeleteSolverButton_Click);
-            // 
-            // DeleteSolverNameLabel
-            // 
-            this.DeleteSolverNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteSolverNameLabel.AutoSize = true;
-            this.DeleteSolverNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DeleteSolverNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.DeleteSolverNameLabel.Name = "DeleteSolverNameLabel";
-            this.DeleteSolverNameLabel.Size = new System.Drawing.Size(88, 48);
-            this.DeleteSolverNameLabel.TabIndex = 10;
-            this.DeleteSolverNameLabel.Text = "Name";
-            this.DeleteSolverNameLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // DeleteSolverNameTextBox
-            // 
-            this.DeleteSolverNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteSolverNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DeleteSolverNameTextBox.Location = new System.Drawing.Point(97, 3);
-            this.DeleteSolverNameTextBox.Name = "DeleteSolverNameTextBox";
-            this.DeleteSolverNameTextBox.Size = new System.Drawing.Size(373, 31);
-            this.DeleteSolverNameTextBox.TabIndex = 7;
             // 
             // tableLayoutPanel5
             // 
@@ -590,6 +548,30 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(473, 117);
             this.tableLayoutPanel5.TabIndex = 14;
             // 
+            // DeleteSolverNameTextBox
+            // 
+            this.DeleteSolverNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteSolverNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteSolverNameTextBox.Location = new System.Drawing.Point(97, 3);
+            this.DeleteSolverNameTextBox.Name = "DeleteSolverNameTextBox";
+            this.DeleteSolverNameTextBox.Size = new System.Drawing.Size(373, 31);
+            this.DeleteSolverNameTextBox.TabIndex = 7;
+            // 
+            // DeleteSolverNameLabel
+            // 
+            this.DeleteSolverNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteSolverNameLabel.AutoSize = true;
+            this.DeleteSolverNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteSolverNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.DeleteSolverNameLabel.Name = "DeleteSolverNameLabel";
+            this.DeleteSolverNameLabel.Size = new System.Drawing.Size(88, 47);
+            this.DeleteSolverNameLabel.TabIndex = 10;
+            this.DeleteSolverNameLabel.Text = "Name";
+            this.DeleteSolverNameLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -599,25 +581,44 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel6.Controls.Add(this.DeleteSolverButton, 2, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(97, 51);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(97, 50);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(373, 63);
             this.tableLayoutPanel6.TabIndex = 11;
             // 
-            // panel1
+            // DeleteSolverButton
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DeleteSolverButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteSolverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.75F);
+            this.DeleteSolverButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DeleteSolverButton.Location = new System.Drawing.Point(263, 3);
+            this.DeleteSolverButton.Name = "DeleteSolverButton";
+            this.DeleteSolverButton.Size = new System.Drawing.Size(107, 33);
+            this.DeleteSolverButton.TabIndex = 13;
+            this.DeleteSolverButton.Text = "Delete";
+            this.DeleteSolverButton.UseVisualStyleBackColor = true;
+            this.DeleteSolverButton.Click += new System.EventHandler(this.DeleteSolverButton_Click);
+            // 
+            // chart
+            // 
+            this.chart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.SolveTaskPanel);
-            this.panel1.Controls.Add(this.AddSolverPanel);
-            this.panel1.Controls.Add(this.DeleteSolverPanel);
-            this.panel1.Location = new System.Drawing.Point(3, 198);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(544, 299);
-            this.panel1.TabIndex = 3;
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            this.chart.Location = new System.Drawing.Point(563, 3);
+            this.chart.Name = "chart";
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.Red;
+            series1.Name = "Series1";
+            this.chart.Series.Add(series1);
+            this.chart.Size = new System.Drawing.Size(555, 482);
+            this.chart.TabIndex = 3;
+            this.chart.Text = "chart";
             // 
             // tableLayoutPanel7
             // 
@@ -643,14 +644,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 550F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel8.Controls.Add(this.chart, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.NavigationLayout, 0, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(1121, 488);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
@@ -667,20 +668,20 @@
             this.SolversTabControl.ResumeLayout(false);
             this.NavigationLayout.ResumeLayout(false);
             this.NavigationLayout.PerformLayout();
-            this.AddSolverPanel.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.SolveTaskPanel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
+            this.AddSolverPanel.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.DeleteSolverPanel.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.ResumeLayout(false);
