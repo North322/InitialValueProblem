@@ -16,7 +16,7 @@ namespace InitialValueProblem
         public SolverTabPage(string _solverName, string _solverType, string _solverBehavior)
         {
             this.SolverTypeLabel = new Label();
-            this.SettingsPage.Controls.Add(this.SolverTypeLabel);
+            //this.SettingsPage.Controls.Add(this.SolverTypeLabel);
         }
     }
 }
