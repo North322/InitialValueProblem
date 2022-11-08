@@ -53,7 +53,11 @@ namespace InitialValueProblem
                 Behavior Behavior = (Behavior) Convert.ToByte(BehaviorComboBox.SelectedIndex);
 
                 ViewModel.AddSolver(Name, Type, Behavior);
+
                 //SolverTabPage SolverTabPage = new SolverTabPage(); 
+
+                //SolverTabPage SolverTabPage = new SolverTabPage();  TODO: 
+
                 //SolversTabControl.TabPages.Add(SolverTabPage);
             }
             catch (Exception ex)
