@@ -41,14 +41,7 @@ namespace InitialValueProblem
 
         public List<List<Point>> SolveTask(InitialValueProblem initialValueProblem)
         {
-            try
-            {
-                return Farm.SolveTask(initialValueProblem);
-            }
-            catch (Exception error)
-            {
-                // Show popup
-            }
+            return Farm.SolveTask(initialValueProblem);
         }
     }
 }

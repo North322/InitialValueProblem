@@ -21,7 +21,7 @@ namespace InitialValueProblem
         }
         return result;
     }
-    public partial class Form1 : Form
+    public partial class InitialValueProblemView : Form
     {
         public InitialValueProblemViewModel ViewModel { get; }
         public InitialValueProblemView()

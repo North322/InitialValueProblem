@@ -139,8 +139,8 @@
             // 
             // AddSolverNavButton
             // 
-            this.AddSolverNavButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.AddSolverNavButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AddSolverNavButton.AutoSize = true;
             this.AddSolverNavButton.Location = new System.Drawing.Point(3, 3);
@@ -153,8 +153,8 @@
             // 
             // DeleteSolverNavButton
             // 
-            this.DeleteSolverNavButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.DeleteSolverNavButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DeleteSolverNavButton.Location = new System.Drawing.Point(3, 45);
             this.DeleteSolverNavButton.Name = "DeleteSolverNavButton";
@@ -166,8 +166,8 @@
             // 
             // SolveNavButton
             // 
-            this.SolveNavButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.SolveNavButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SolveNavButton.Location = new System.Drawing.Point(3, 87);
             this.SolveNavButton.Name = "SolveNavButton";
