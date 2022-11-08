@@ -124,7 +124,6 @@
             // 
             this.NavigationLayout.ColumnCount = 1;
             this.NavigationLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            //this.NavigationLayout.Controls.Add(this.chart, 0, 3);
             this.NavigationLayout.Controls.Add(this.AddSolverNavButton, 0, 0);
             this.NavigationLayout.Controls.Add(this.DeleteSolverNavButton, 0, 1);
             this.NavigationLayout.Controls.Add(this.SolveNavButton, 0, 2);
