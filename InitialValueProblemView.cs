@@ -98,7 +98,7 @@ namespace InitialValueProblem
                 {
                     Console.WriteLine($"x{i}: {point.X}, y{i}: {point.Y}");
 
-                    this.chart.Series[0].Points.AddXY(point.X, point.Y);
+                    this.chart1.Series[0].Points.AddXY(point.X, point.Y);
                     i++;
                 }
             } catch (Exception ex)
