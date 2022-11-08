@@ -36,7 +36,7 @@ namespace InitialValueProblem
                             break;
 
                         case Behavior.FinishBeforeRightBorder:
-                            break;                    
+                            break;
                     }
                     break;
                 }
