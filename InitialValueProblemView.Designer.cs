@@ -51,6 +51,7 @@
             this.BehaviorComboBox = new System.Windows.Forms.ComboBox();
             this.TypeComboBox = new System.Windows.Forms.ComboBox();
             this.AddSolverNameTextBox = new System.Windows.Forms.TextBox();
+            this.DeleteSolverButton = new System.Windows.Forms.Button();
             this.SolveTaskPanel = new System.Windows.Forms.Panel();
             this.tLabel = new System.Windows.Forms.Label();
             this.tTextBox = new System.Windows.Forms.TextBox();
@@ -61,7 +62,10 @@
             this.SolveButton = new System.Windows.Forms.Button();
             this.y0Label = new System.Windows.Forms.Label();
             this.y0TextBox = new System.Windows.Forms.TextBox();
+            this.DeleteSolverNameLabel = new System.Windows.Forms.Label();
+            this.DeleteSolverNameTextBox = new System.Windows.Forms.TextBox();
             this.SolversTabControl.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.NavigationLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.ContentLayout.SuspendLayout();
@@ -83,6 +87,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -122,19 +129,19 @@
             // 
             // chart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea1);
-            this.chart.Location = new System.Drawing.Point(3, 129);
-            this.chart.Name = "chart";
-            series1.BorderWidth = 3;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.Red;
-            series1.Name = "Series1";
-            this.chart.Series.Add(series1);
-            this.chart.Size = new System.Drawing.Size(325, 292);
-            this.chart.TabIndex = 3;
-            this.chart.Text = "chart";
+            chartArea6.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart1.Legends.Add(legend6);
+            this.chart1.Location = new System.Drawing.Point(3, 129);
+            this.chart1.Name = "chart1";
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chart1.Series.Add(series6);
+            this.chart1.Size = new System.Drawing.Size(325, 292);
+            this.chart1.TabIndex = 3;
+            this.chart1.Text = "chart1";
             // 
             // AddSolverNavButton
             // 
@@ -323,6 +330,18 @@
             this.AddSolverNameTextBox.Size = new System.Drawing.Size(269, 31);
             this.AddSolverNameTextBox.TabIndex = 0;
             // 
+            // DeleteSolverButton
+            // 
+            this.DeleteSolverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteSolverButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DeleteSolverButton.Location = new System.Drawing.Point(254, 166);
+            this.DeleteSolverButton.Name = "DeleteSolverButton";
+            this.DeleteSolverButton.Size = new System.Drawing.Size(110, 33);
+            this.DeleteSolverButton.TabIndex = 13;
+            this.DeleteSolverButton.Text = "Delete";
+            this.DeleteSolverButton.UseVisualStyleBackColor = true;
+            this.DeleteSolverButton.Click += new System.EventHandler(this.DeleteSolverButton_Click);
+            // 
             // SolveTaskPanel
             // 
             this.SolveTaskPanel.Controls.Add(this.tLabel);
@@ -424,7 +443,25 @@
             this.y0TextBox.Size = new System.Drawing.Size(206, 31);
             this.y0TextBox.TabIndex = 7;
             // 
-            // InitialValueProblemView
+            // DeleteSolverNameLabel
+            // 
+            this.DeleteSolverNameLabel.AutoSize = true;
+            this.DeleteSolverNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteSolverNameLabel.Location = new System.Drawing.Point(62, 99);
+            this.DeleteSolverNameLabel.Name = "DeleteSolverNameLabel";
+            this.DeleteSolverNameLabel.Size = new System.Drawing.Size(68, 25);
+            this.DeleteSolverNameLabel.TabIndex = 10;
+            this.DeleteSolverNameLabel.Text = "Name";
+            // 
+            // DeleteSolverNameTextBox
+            // 
+            this.DeleteSolverNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteSolverNameTextBox.Location = new System.Drawing.Point(149, 96);
+            this.DeleteSolverNameTextBox.Name = "DeleteSolverNameTextBox";
+            this.DeleteSolverNameTextBox.Size = new System.Drawing.Size(215, 31);
+            this.DeleteSolverNameTextBox.TabIndex = 7;
+            // 
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -437,6 +474,8 @@
             this.Name = "InitialValueProblemView";
             this.Text = "Form1";
             this.SolversTabControl.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.NavigationLayout.ResumeLayout(false);
             this.NavigationLayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
@@ -483,7 +522,7 @@
         private System.Windows.Forms.Button DeleteSolverButton;
         private System.Windows.Forms.Label DeleteSolverNameLabel;
         private System.Windows.Forms.TextBox DeleteSolverNameTextBox;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 
