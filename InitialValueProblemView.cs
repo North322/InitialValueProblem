@@ -51,7 +51,10 @@ namespace InitialValueProblem
                 string Name = AddSolverNameTextBox.Text;
                 Type Type = (Type) Convert.ToByte(TypeComboBox.SelectedIndex);
                 Behavior Behavior = (Behavior) Convert.ToByte(BehaviorComboBox.SelectedIndex);
+
                 ViewModel.AddSolver(Name, Type, Behavior);
+                SolverTabPage SolverTabPage = new SolverTabPage(); 
+                SolversTabControl.TabPages.Add(SolverTabPage);
             }
             catch (Exception ex)
             {
@@ -64,7 +67,10 @@ namespace InitialValueProblem
             try
             {
                 string Name = DeleteSolverNameTextBox.Text;
+                int SolverIndex = ViewModel.Farm.FindSolverByName(Name);
                 ViewModel.DeleteSolver(Name);
+                SolversTabControl.SelectedIndex = SolverIndex;
+                SolversTabControl.TabPages.Remove(SolversTabControl.SelectedTab);
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -107,7 +113,7 @@ namespace InitialValueProblem
 
         }
 
-        private void UpdateTabsContents(List<List<Point>> Solutions) 
+        private void UpdateTabsContent(List<List<Point>> Solutions) 
         {
             int index = 0;
 
@@ -117,6 +123,26 @@ namespace InitialValueProblem
                 
                 index++;
             }
+        }
+
+        private void y0Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void t0Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddSolverPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void InitialValueProblemView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
