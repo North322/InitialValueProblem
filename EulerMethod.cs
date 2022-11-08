@@ -9,32 +9,30 @@ namespace InitialValueProblem
         // Methods
         public override List<Point> Solve(InitialValueProblem Task)
         {
-            double FunctionValue, StepSize = Task.H;
-            int i = 1;
+            double PreviousFunctionValue, StepSize = Task.H;
+            int i = 0;
             List<Point> Solution = new List<Point>();
 
             Solution.Add(new Point(Task.T0, Task.Y0));
-            FunctionValue = Task.CountFunctionValue(Solution[0].X, Solution[0].Y);
+            i++;
 
             while (Solution[i - 1].X < Task.T)
             {
-                Solution.Add(new Point(Solution[i - 1].X + StepSize, Solution[i - 1].Y + StepSize * FunctionValue));
-                FunctionValue = Task.CountFunctionValue(Solution[i].X, Solution[i].Y);
-
-                // случаи непопадания на границу отрезка
-                if ((Solution[i].X + StepSize) > Task.T)
+                if ((Solution[i - 1].X + StepSize) > Task.T)
                 {
                     switch (Behavior)
                     {
                         case Behavior.FinishAtTheRightBorder:
+                            StepSize = Task.T - Solution[i - 1].X;
+                            PreviousFunctionValue = Task.CountFunctionValue(Solution[i - 1].X, Solution[i - 1].Y);
 
-                            StepSize = Task.T - (StepSize * i + Solution[0].X);
-
-                            Solution.Add(new Point(Solution[i].X + StepSize, Solution[i].Y + StepSize * FunctionValue));
+                            Solution.Add(new Point(Solution[i - 1].X + StepSize, Solution[i - 1].Y + StepSize * PreviousFunctionValue));
                             break;
 
                         case Behavior.FinishAfterRightBorder:
-                            Solution.Add(new Point(Solution[i].X + StepSize, Solution[i].Y + StepSize * FunctionValue));
+                            PreviousFunctionValue = Task.CountFunctionValue(Solution[i - 1].X, Solution[i - 1].Y);
+
+                            Solution.Add(new Point(Solution[i - 1].X + StepSize, Solution[i - 1].Y + StepSize * PreviousFunctionValue));
                             break;
 
                         case Behavior.FinishBeforeRightBorder:
@@ -42,6 +40,9 @@ namespace InitialValueProblem
                     }
                     break;
                 }
+
+                PreviousFunctionValue = Task.CountFunctionValue(Solution[i - 1].X, Solution[i - 1].Y);
+                Solution.Add(new Point(Solution[i - 1].X + StepSize, Solution[i - 1].Y + StepSize * PreviousFunctionValue));
                 i++;
             }
             return Solution;

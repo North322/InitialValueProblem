@@ -9,50 +9,46 @@ namespace InitialValueProblem
         // Methods
         public override List<Point> Solve(InitialValueProblem Task)
         {
-            double StepSize = Task.H;
-            double YIntermediate, FunctionIntermediateValue, FunctionValue;
-            int i = 1;
+            double StepSize = Task.H, PreviousFunctionValue,
+                YApproximation;
+            int i = 0;
             List<Point> Solution = new List<Point>();
 
             Solution.Add(new Point(Task.T0, Task.Y0));
-            FunctionValue = Task.CountFunctionValue(Solution[0].X, Solution[0].Y);
+            i++;
 
             while (Solution[i - 1].X < Task.T)
             {
-                double temp = Solution[i - 1].X + StepSize;
-
-                YIntermediate = Solution[i - 1].Y + StepSize * FunctionValue;
-                FunctionIntermediateValue = Task.CountFunctionValue(temp - StepSize, YIntermediate);
-                Solution.Add(new Point(temp, Solution[i - 1].Y + StepSize / 2 * (FunctionValue + FunctionIntermediateValue)));
-
-                FunctionValue = Task.CountFunctionValue(Solution[i].X, Solution[i].Y);
-
-                if ((Solution[i].X + StepSize) > Task.T)
+                if ((Solution[i - 1].X + StepSize) > Task.T)
                 {
-                    // Out of border situations
-                    switch (Behavior) 
+                    switch (Behavior)
                     {
                         case Behavior.FinishAtTheRightBorder:
-                            StepSize = Task.T - (StepSize * i + Solution[0].X);
-                            temp = Solution[i].X + StepSize;
+                            StepSize = Task.T - Solution[i - 1].X;
 
-                            YIntermediate = Solution[i].Y + StepSize * FunctionValue;
-                            FunctionIntermediateValue = Task.CountFunctionValue(Solution[i + 1].X, YIntermediate);
-                            Solution.Add(new Point(temp, Solution[i].Y + StepSize / 2 * (FunctionValue + FunctionIntermediateValue)));
+                            PreviousFunctionValue = Task.CountFunctionValue(Solution[i - 1].X, Solution[i - 1].Y);
+                            YApproximation = StepSize * Task.CountFunctionValue(Solution[i - 1].X + StepSize / 2, Solution[i - 1].Y + StepSize * PreviousFunctionValue / 2);
+
+                            Solution.Add(new Point(Solution[i - 1].X + StepSize, Solution[i - 1].Y + YApproximation));
                             break;
 
                         case Behavior.FinishAfterRightBorder:
-                            temp = Solution[i].X + StepSize;
-                            
-                            YIntermediate = Solution[i].Y + StepSize * FunctionValue;
-                            FunctionIntermediateValue = Task.CountFunctionValue(Solution[i + 1].X, YIntermediate);
-                            Solution.Add(new Point(temp, Solution[i].Y + StepSize / 2 * (FunctionValue + FunctionIntermediateValue)));
+                            PreviousFunctionValue = Task.CountFunctionValue(Solution[i - 1].X, Solution[i - 1].Y);
+                            YApproximation = StepSize * Task.CountFunctionValue(Solution[i - 1].X + StepSize / 2, Solution[i - 1].Y + StepSize * PreviousFunctionValue / 2);
+
+                            Solution.Add(new Point(Solution[i - 1].X + StepSize, Solution[i - 1].Y + YApproximation));
                             break;
                         case Behavior.FinishBeforeRightBorder:
                             break;
                     }
                     break;
                 }
+                PreviousFunctionValue = Task.CountFunctionValue(Solution[i - 1].X, Solution[i - 1].Y);
+                YApproximation = StepSize * Task.CountFunctionValue(Solution[i - 1].X + StepSize / 2, Solution[i - 1].Y + StepSize * PreviousFunctionValue / 2);
+
+                Solution.Add(new Point(Solution[i - 1].X + StepSize, Solution[i - 1].Y + YApproximation));
+
+
                 i++;
             }
             return Solution;
