@@ -1,6 +1,6 @@
 ﻿namespace InitialValueProblem
 {
-    partial class Form1
+    partial class InitialValueProblemView
     {
         /// <summary>
         /// Обязательная переменная конструктора.

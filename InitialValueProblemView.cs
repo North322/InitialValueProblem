@@ -21,13 +21,13 @@ namespace InitialValueProblem
         }
         return result;
     }
-    public partial class Form1 : Form
+    public partial class InitialValueProblemView : Form
     {
-        public Menu menu;
-        public Form1()
+        public InitialValueProblemViewModel ViewModel { get; }
+        public InitialValueProblemView()
         {
             InitializeComponent();
-            menu = new Menu();
+            ViewModel = new InitialValueProblemViewModel();
             BehaviorComboBox.SelectedIndex = 0;
             TypeComboBox.SelectedIndex = 0;
         }
@@ -60,11 +60,11 @@ namespace InitialValueProblem
                 string Name = AddSolverNameTextBox.Text;
                 Type Type = (Type) Convert.ToByte(TypeComboBox.SelectedIndex);
                 Behavior Behavior = (Behavior) Convert.ToByte(BehaviorComboBox.SelectedIndex);
-                menu.AddSolver(Name, Type, Behavior);
+                ViewModel.AddSolver(Name, Type, Behavior);
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                Console.WriteLine(error.Message);
+                MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
         }
 
@@ -73,10 +73,10 @@ namespace InitialValueProblem
             try
             {
                 string Name = DeleteSolverNameTextBox.Text;
-                menu.DeleteSolver(Name);
-            } catch (Exception error)
+                ViewModel.DeleteSolver(Name);
+            } catch (Exception ex)
             {
-                // Show popup
+                MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -89,10 +89,10 @@ namespace InitialValueProblem
                     t = Convert.ToDouble(tTextBox.Text), 
                     h = Convert.ToDouble(hTextBox.Text);
 
-                List<List<Point>> Solutions = menu.SolveTask(new InitialValueProblem(y0, t0, t, h));
-            } catch (Exception error)
+                List<List<Point>> Solutions = ViewModel.SolveTask(new InitialValueProblem(y0, t0, t, h));
+            } catch (Exception ex)
             {
-                // Show popup
+                MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
