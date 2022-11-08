@@ -39,6 +39,11 @@ namespace InitialValueProblem
             Farm.DeleteSolver(Name);
         }
 
+        public int FindSolverByName(string Name)
+        {
+            return Farm.FindSolverByName(Name);    
+        }
+
         public List<List<Point>> SolveTask(InitialValueProblem initialValueProblem)
         {
             return Farm.SolveTask(initialValueProblem);

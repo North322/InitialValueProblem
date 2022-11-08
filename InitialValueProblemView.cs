@@ -86,7 +86,7 @@ namespace InitialValueProblem
                 this.chart.Series[0].Points.Clear();
                 Farm Farms = new Farm();
 
-                int i = 0, index = Farms.FindSolverByName(name);
+                int i = 0, index = ViewModel.FindSolverByName(name);
 
                 foreach (Point point in Solutions[index])
                 {

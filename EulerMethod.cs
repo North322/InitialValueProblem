@@ -26,18 +26,18 @@ namespace InitialValueProblem
                 {
                     switch (Behavior)
                     {
-                        case Behavior.FinishAtTheLeftBorder:
+                        case Behavior.FinishAtTheRightBorder:
 
                             StepSize = Task.T - (StepSize * i + Solution[0].X);
 
                             Solution.Add(new Point(Solution[i].X + StepSize, Solution[i].Y + StepSize * FunctionValue));
                             break;
 
-                        case Behavior.FinishAfterLeftBorder:
+                        case Behavior.FinishAfterRightBorder:
                             Solution.Add(new Point(Solution[i].X + StepSize, Solution[i].Y + StepSize * FunctionValue));
                             break;
 
-                        case Behavior.FinishBeforeLeftBorder:
+                        case Behavior.FinishBeforeRightBorder:
                             break;
                     }
                     break;

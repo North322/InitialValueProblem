@@ -32,7 +32,7 @@ namespace InitialValueProblem
                     // Out of border situations
                     switch (Behavior) 
                     {
-                        case Behavior.FinishAtTheLeftBorder:
+                        case Behavior.FinishAtTheRightBorder:
                             StepSize = Task.T - (StepSize * i + Solution[0].X);
                             temp = Solution[i].X + StepSize;
 
@@ -41,14 +41,14 @@ namespace InitialValueProblem
                             Solution.Add(new Point(temp, Solution[i].Y + StepSize / 2 * (FunctionValue + FunctionIntermediateValue)));
                             break;
 
-                        case Behavior.FinishAfterLeftBorder:
+                        case Behavior.FinishAfterRightBorder:
                             temp = Solution[i].X + StepSize;
                             
                             YIntermediate = Solution[i].Y + StepSize * FunctionValue;
                             FunctionIntermediateValue = Task.CountFunctionValue(Solution[i + 1].X, YIntermediate);
                             Solution.Add(new Point(temp, Solution[i].Y + StepSize / 2 * (FunctionValue + FunctionIntermediateValue)));
                             break;
-                        case Behavior.FinishBeforeLeftBorder:
+                        case Behavior.FinishBeforeRightBorder:
                             break;
                     }
                     break;
