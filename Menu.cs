@@ -30,7 +30,7 @@ namespace InitialValueProblem
                     break;
                 default:
                     // Probably for change
-                    throw new ApplicationException("Wron behavior type!");
+                    throw new ApplicationException("Wrong behavior type!");
             }
         }
 

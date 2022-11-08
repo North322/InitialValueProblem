@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace InitialValueProblem
 {
@@ -79,10 +81,30 @@ namespace InitialValueProblem
                     h = Convert.ToDouble(hTextBox.Text);
 
                 List<List<Point>> Solutions = ViewModel.SolveTask(new InitialValueProblem(y0, t0, t, h));
+                string name = AddSolverNameTextBox.Text;
+
+                this.chart.Series[0].Points.Clear();
+                Farm Farms = new Farm();
+
+                int i = 0, index = Farms.FindSolverByName(name);
+
+                foreach (Point point in Solutions[index])
+                {
+                    Console.WriteLine($"x{i}: {point.X}, y{i}: {point.Y}");
+
+                    this.chart.Series[0].Points.AddXY(point.X, point.Y);
+                    i++;
+                }
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+            
+
+            
+
+
         }
 
         private void UpdateTabsContents(List<List<Point>> Solutions) 
