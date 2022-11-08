@@ -118,5 +118,25 @@ namespace InitialValueProblem
                 index++;
             }
         }
+
+        private void y0Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void t0Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddSolverPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void InitialValueProblemView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
