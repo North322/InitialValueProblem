@@ -122,9 +122,9 @@
             // 
             // NavigationLayout
             // 
-            this.NavigationLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.NavigationLayout.ColumnCount = 1;
             this.NavigationLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            //this.NavigationLayout.Controls.Add(this.chart, 0, 3);
             this.NavigationLayout.Controls.Add(this.AddSolverNavButton, 0, 0);
             this.NavigationLayout.Controls.Add(this.DeleteSolverNavButton, 0, 1);
             this.NavigationLayout.Controls.Add(this.SolveNavButton, 0, 2);
@@ -206,6 +206,102 @@
             this.AddSolverNameTextBox.Size = new System.Drawing.Size(357, 31);
             this.AddSolverNameTextBox.TabIndex = 0;
             // 
+            // DeleteSolverPanel
+            // 
+            this.DeleteSolverPanel.Controls.Add(this.DeleteSolverButton);
+            this.DeleteSolverPanel.Controls.Add(this.DeleteSolverNameLabel);
+            this.DeleteSolverPanel.Controls.Add(this.DeleteSolverNameTextBox);
+            this.DeleteSolverPanel.Location = new System.Drawing.Point(3, 3);
+            this.DeleteSolverPanel.Name = "DeleteSolverPanel";
+            this.DeleteSolverPanel.Size = new System.Drawing.Size(438, 251);
+            this.DeleteSolverPanel.TabIndex = 20;
+            // 
+            // DeleteSolverButton
+            // 
+            this.DeleteSolverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteSolverButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DeleteSolverButton.Location = new System.Drawing.Point(254, 166);
+            this.DeleteSolverButton.Name = "DeleteSolverButton";
+            this.DeleteSolverButton.Size = new System.Drawing.Size(110, 33);
+            this.DeleteSolverButton.TabIndex = 13;
+            this.DeleteSolverButton.Text = "Delete";
+            this.DeleteSolverButton.UseVisualStyleBackColor = true;
+            this.DeleteSolverButton.Click += new System.EventHandler(this.DeleteSolverButton_Click);
+            // 
+            // DeleteSolverNameLabel
+            // 
+            this.DeleteSolverNameLabel.AutoSize = true;
+            this.DeleteSolverNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteSolverNameLabel.Location = new System.Drawing.Point(62, 99);
+            this.DeleteSolverNameLabel.Name = "DeleteSolverNameLabel";
+            this.DeleteSolverNameLabel.Size = new System.Drawing.Size(68, 25);
+            this.DeleteSolverNameLabel.TabIndex = 10;
+            this.DeleteSolverNameLabel.Text = "Name";
+            // 
+            // DeleteSolverNameTextBox
+            // 
+            this.DeleteSolverNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteSolverNameTextBox.Location = new System.Drawing.Point(149, 96);
+            this.DeleteSolverNameTextBox.Name = "DeleteSolverNameTextBox";
+            this.DeleteSolverNameTextBox.Size = new System.Drawing.Size(215, 31);
+            this.DeleteSolverNameTextBox.TabIndex = 7;
+            // 
+            // AddSolverPanel
+            // 
+            this.AddSolverPanel.Controls.Add(this.AddSolverButton);
+            this.AddSolverPanel.Controls.Add(this.BehaviorLabel);
+            this.AddSolverPanel.Controls.Add(this.typeLabel);
+            this.AddSolverPanel.Controls.Add(this.AddSolverNameLabel);
+            this.AddSolverPanel.Controls.Add(this.BehaviorComboBox);
+            this.AddSolverPanel.Controls.Add(this.TypeComboBox);
+            this.AddSolverPanel.Controls.Add(this.AddSolverNameTextBox);
+            this.AddSolverPanel.Location = new System.Drawing.Point(344, 9);
+            this.AddSolverPanel.Name = "AddSolverPanel";
+            this.AddSolverPanel.Size = new System.Drawing.Size(594, 251);
+            this.AddSolverPanel.TabIndex = 1;
+            // 
+            // AddSolverButton
+            // 
+            this.AddSolverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddSolverButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AddSolverButton.Location = new System.Drawing.Point(284, 179);
+            this.AddSolverButton.Name = "AddSolverButton";
+            this.AddSolverButton.Size = new System.Drawing.Size(110, 33);
+            this.AddSolverButton.TabIndex = 6;
+            this.AddSolverButton.Text = "Add";
+            this.AddSolverButton.UseVisualStyleBackColor = true;
+            this.AddSolverButton.Click += new System.EventHandler(this.AddSolverButton_Click);
+            // 
+            // BehaviorLabel
+            // 
+            this.BehaviorLabel.AutoSize = true;
+            this.BehaviorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BehaviorLabel.Location = new System.Drawing.Point(12, 130);
+            this.BehaviorLabel.Name = "BehaviorLabel";
+            this.BehaviorLabel.Size = new System.Drawing.Size(97, 25);
+            this.BehaviorLabel.TabIndex = 5;
+            this.BehaviorLabel.Text = "Behavior";
+            // 
+            // typeLabel
+            // 
+            this.typeLabel.AutoSize = true;
+            this.typeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.typeLabel.Location = new System.Drawing.Point(41, 87);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Size = new System.Drawing.Size(60, 25);
+            this.typeLabel.TabIndex = 4;
+            this.typeLabel.Text = "Type";
+            // 
+            // AddSolverNameLabel
+            // 
+            this.AddSolverNameLabel.AutoSize = true;
+            this.AddSolverNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddSolverNameLabel.Location = new System.Drawing.Point(33, 45);
+            this.AddSolverNameLabel.Name = "AddSolverNameLabel";
+            this.AddSolverNameLabel.Size = new System.Drawing.Size(68, 25);
+            this.AddSolverNameLabel.TabIndex = 3;
+            this.AddSolverNameLabel.Text = "Name";
+            // 
             // BehaviorComboBox
             // 
             this.BehaviorComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -217,7 +313,7 @@
             "Finish at the left border",
             "Finish after left border",
             "Finish before left border"});
-            this.BehaviorComboBox.Location = new System.Drawing.Point(117, 127);
+            this.BehaviorComboBox.Location = new System.Drawing.Point(125, 130);
             this.BehaviorComboBox.Name = "BehaviorComboBox";
             this.BehaviorComboBox.Size = new System.Drawing.Size(357, 33);
             this.BehaviorComboBox.TabIndex = 2;
@@ -667,14 +763,6 @@
             this.SolversTabControl.ResumeLayout(false);
             this.NavigationLayout.ResumeLayout(false);
             this.NavigationLayout.PerformLayout();
-            this.AddSolverPanel.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.SolveTaskPanel.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.DeleteSolverPanel.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
