@@ -43,7 +43,7 @@ namespace InitialValueProblem
             }
             return result;
         }
-        
+
         public InitialValueProblemView()
         {
             InitializeComponent();
@@ -68,7 +68,7 @@ namespace InitialValueProblem
 
         private void solveTask_Click(object sender, EventArgs e)
         {
-            AddSolverPanel.Visible = false; 
+            AddSolverPanel.Visible = false;
             SolveTaskPanel.Visible = true;
             DeleteSolverPanel.Visible = false;
         }
@@ -85,18 +85,18 @@ namespace InitialValueProblem
             try
             {
                 string Name = AddSolverNameTextBox.Text;
-                Type Type = (Type) Convert.ToByte(TypeComboBox.SelectedIndex);
-                Behavior Behavior = (Behavior) Convert.ToByte(BehaviorComboBox.SelectedIndex);
+                Type Type = (Type)Convert.ToByte(TypeComboBox.SelectedIndex);
+                Behavior Behavior = (Behavior)Convert.ToByte(BehaviorComboBox.SelectedIndex);
 
                 ViewModel.AddSolver(Name, Type, Behavior);
-                SolverTabPage SolverTabPage = new SolverTabPage(Name, GetEnumDescription(Type), 
-                    GetEnumDescription(Behavior), "", SolversTabControl.TabPages.Count); 
+                SolverTabPage SolverTabPage = new SolverTabPage(Name, GetEnumDescription(Type),
+                    GetEnumDescription(Behavior), "", SolversTabControl.TabPages.Count);
                 SolversTabControl.TabPages.Add(SolverTabPage);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
+            }
         }
 
         private void DeleteSolverButton_Click(object sender, EventArgs e)
@@ -110,7 +110,8 @@ namespace InitialValueProblem
                 SolversTabControl.SelectedIndex = SolverIndex;
                 SolversTabControl.TabPages.Remove(SolversTabControl.SelectedTab);
 
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -129,13 +130,14 @@ namespace InitialValueProblem
                     c = Convert.ToDouble(bTextBox.Text);
 
                 List<List<Point>> Solutions = ViewModel.SolveTask(new InitialValueProblem(y0, t0, t, h, a, b, c));
-                
+
                 this.chart.Series[0].Points.Clear();
                 Farm Farms = new Farm();
 
                 UpdateChart(Solutions);
                 UpdateSolversSolutionTabs(Solutions);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -149,13 +151,22 @@ namespace InitialValueProblem
                 (V) Организовать смену цветов
                 (V) Оптимизировать вывод большого кол-ва точек
                 (?) Обновлять графики при удалении/добавлении Solver
+                (V) Добавить легенду
             */
 
             int SolutionIndex = 0;
             chart.Series.Clear();
+            chart.Legends.Clear();
             foreach (List<Point> Solution in Solutions)
             {
-                chart.Series.Add(SolutionIndex.ToString());
+
+
+
+                chart.Series.Add(ViewModel.Farm.GetNamebyIndex(SolutionIndex));
+
+                chart.Legends.Add(ViewModel.Farm.GetNamebyIndex(SolutionIndex));
+                chart.Legends[SolutionIndex].DockedToChartArea = "ChartArea1";
+
                 chart.Series[SolutionIndex].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
                 chart.Series[SolutionIndex].BorderWidth = 3;
 
@@ -179,11 +190,6 @@ namespace InitialValueProblem
                 SolversTabControl.SelectTab(i);
                 SolversTabControl.SelectedTab.Controls[$"SolverSolutionLabel{i}"].Text = ListToString(Solutions[i]);
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

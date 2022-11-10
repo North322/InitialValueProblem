@@ -44,6 +44,11 @@ namespace InitialValueProblem
             throw new ArgumentException("There is no such solver");
         }
 
+        public string GetNamebyIndex(int index)
+        {
+            return Solvers[index].Name;
+        }
+
         public List<List<Point>> SolveTask(InitialValueProblem Task)
         {
             List<List<Point>> Solutions = new List<List<Point>>();
