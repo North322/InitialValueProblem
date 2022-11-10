@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitialValueProblemView));
             this.NavigationLayout = new System.Windows.Forms.TableLayoutPanel();
             this.AddSolverNavButton = new System.Windows.Forms.Button();
             this.DeleteSolverNavButton = new System.Windows.Forms.Button();
@@ -588,16 +589,16 @@
             this.chart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea2);
             this.chart.Location = new System.Drawing.Point(559, 6);
             this.chart.Name = "chart";
-            series1.BorderWidth = 3;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.Red;
-            series1.Name = "Series1";
-            this.chart.Series.Add(series1);
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.Red;
+            series2.Name = "Series1";
+            this.chart.Series.Add(series2);
             this.chart.Size = new System.Drawing.Size(554, 476);
             this.chart.TabIndex = 3;
             this.chart.TabStop = false;
@@ -756,6 +757,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1132, 699);
             this.Controls.Add(this.MainLayoutPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1148, 738);
             this.Name = "InitialValueProblemView";
             this.Text = "Initial value problem";
