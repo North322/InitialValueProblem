@@ -156,7 +156,7 @@ namespace InitialValueProblem
                 chart.Series[SolutionIndex].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
                 chart.Series[SolutionIndex].BorderWidth = 3;
 
-                chart.Series[SolutionIndex].BorderColor = palette[SolutionIndex % palette.Count];
+                chart.Series[SolutionIndex].BorderColor = Palette[SolutionIndex % Palette.Count];
 
                 int WhichDotToDraw = (Solution.Count > 100) ? Solution.Count / 100 : 1;
 
