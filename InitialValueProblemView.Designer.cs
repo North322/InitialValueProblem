@@ -283,7 +283,6 @@
             this.y0Label.TabIndex = 10;
             this.y0Label.Text = "Start position";
             this.y0Label.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.y0Label.Click += new System.EventHandler(this.y0Label_Click);
             // 
             // t0Label
             // 
@@ -299,7 +298,6 @@
             this.t0Label.TabIndex = 17;
             this.t0Label.Text = "Left border";
             this.t0Label.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.t0Label.Click += new System.EventHandler(this.t0Label_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -340,7 +338,6 @@
             this.AddSolverPanel.Name = "AddSolverPanel";
             this.AddSolverPanel.Size = new System.Drawing.Size(505, 277);
             this.AddSolverPanel.TabIndex = 1;
-            this.AddSolverPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddSolverPanel_Paint);
             // 
             // tableLayoutPanel3
             // 
@@ -640,7 +637,6 @@
             this.MinimumSize = new System.Drawing.Size(1148, 738);
             this.Name = "InitialValueProblemView";
             this.Text = "Initial value problem";
-            this.Load += new System.EventHandler(this.InitialValueProblemView_Load);
             this.NavigationLayout.ResumeLayout(false);
             this.NavigationLayout.PerformLayout();
             this.panel1.ResumeLayout(false);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -39,10 +40,19 @@ namespace InitialValueProblem
             return result;
         }
         public InitialValueProblemViewModel ViewModel { get; }
+
+        public List<Color> palette { get; }
         public InitialValueProblemView()
         {
             InitializeComponent();
             ViewModel = new InitialValueProblemViewModel();
+            palette = new List<Color>();
+            palette.Add(Color.FromArgb(0x003f5c));
+            palette.Add(Color.FromArgb(0x444e86));
+            palette.Add(Color.FromArgb(0x955196));
+            palette.Add(Color.FromArgb(0xdd5182));
+            palette.Add(Color.FromArgb(0xff6354));
+            palette.Add(Color.FromArgb(0xffa600));
             BehaviorComboBox.SelectedIndex = 0;
             TypeComboBox.SelectedIndex = 0;
         }
@@ -136,14 +146,15 @@ namespace InitialValueProblem
         {
             int SolutionIndex = 0;
             chart.Series.Clear();
-            foreach (List<Point> points in Solutions)
+            foreach (List<Point> Solution in Solutions)
             {
                 chart.Series.Add(SolutionIndex.ToString());
                 chart.Series[SolutionIndex].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
                 chart.Series[SolutionIndex].BorderWidth = 3;
-                foreach(Point point in points)
+                chart.Series[SolutionIndex].Color = palette[SolutionIndex % palette.Count];
+                foreach(Point Point in Solution)
                 {
-                    this.chart.Series[SolutionIndex].Points.AddXY(point.X, point.Y);
+                    this.chart.Series[SolutionIndex].Points.AddXY(Point.X, Point.Y);
                 }
                 SolutionIndex++;
             }
@@ -166,26 +177,6 @@ namespace InitialValueProblem
                 
                 index++;
             }
-        }
-
-        private void y0Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void t0Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddSolverPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void InitialValueProblemView_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
