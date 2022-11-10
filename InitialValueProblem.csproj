@@ -56,7 +56,7 @@
     </Compile>
     <Compile Include="HoinMethod.cs" />
     <Compile Include="InitialValueProblem.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="InitialValueProblemViewModel.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
