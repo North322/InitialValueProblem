@@ -59,6 +59,5 @@ namespace InitialValueProblem
         {
             Solvers.Remove(Solvers[this.FindSolverByName(Name)]);
         }
-
     }
 }

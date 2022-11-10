@@ -8,7 +8,7 @@ namespace InitialValueProblem
     { 
         // Properties
         public Farm Farm { get; }
-        public List<List<Point>> Solutions { get; set; }
+        public List<List<Point>> Solutions { get; }
         
         // Constructors
         public InitialValueProblemViewModel()
@@ -28,9 +28,6 @@ namespace InitialValueProblem
                 case Type.HoinSolver:
                     Farm.AddSolver(new HoinSolver(Name, Behavior));
                     break;
-                default:
-                    // Probably for change
-                    throw new ApplicationException("Wrong behavior type!");
             }
         }
 
@@ -43,8 +40,6 @@ namespace InitialValueProblem
         {
             return Farm.FindSolverByName(Name);    
         }
-
-
 
         public List<List<Point>> SolveTask(InitialValueProblem initialValueProblem)
         {

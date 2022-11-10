@@ -16,6 +16,9 @@ namespace InitialValueProblem
 {
     public partial class InitialValueProblemView : Form
     {
+        public InitialValueProblemViewModel ViewModel { get; }
+        public List<Color> palette { get; }
+
         static public string GetEnumDescription(Enum value)
         {
             FieldInfo FieldInfo = value.GetType().GetField(value.ToString());
@@ -40,9 +43,7 @@ namespace InitialValueProblem
             }
             return result;
         }
-        public InitialValueProblemViewModel ViewModel { get; }
-
-        public List<Color> palette { get; }
+        
         public InitialValueProblemView()
         {
             InitializeComponent();
@@ -104,6 +105,7 @@ namespace InitialValueProblem
             {
                 string Name = DeleteSolverNameTextBox.Text;
                 int SolverIndex = ViewModel.Farm.FindSolverByName(Name);
+
                 ViewModel.DeleteSolver(Name);
                 SolversTabControl.SelectedIndex = SolverIndex;
                 SolversTabControl.TabPages.Remove(SolversTabControl.SelectedTab);
@@ -123,34 +125,12 @@ namespace InitialValueProblem
                     h = Convert.ToDouble(hTextBox.Text);
 
                 List<List<Point>> Solutions = ViewModel.SolveTask(new InitialValueProblem(y0, t0, t, h));
-                string name = AddSolverNameTextBox.Text;
-
+                
                 this.chart.Series[0].Points.Clear();
                 Farm Farms = new Farm();
 
-                int i = 0;
-
-                int SeriesCount = this.chart.Series.Count;
-                // MessageBox.Show(SeriesCount.ToString());
-
-
-                Series series12= new Series();
-                series12.ChartType = SeriesChartType.Spline;
-                series12.BorderWidth = 3;
-
-                this.chart.Series.Add(series12);
-
-
-                for (i = 0; i < SeriesCount; i++)
-                {
-                    int index = ViewModel.FindSolverByName(name);
-
-                    foreach (Point point in Solutions[index])
-                    {
-                        this.chart.Series[0].Points.AddXY(point.X, point.Y);
-                    }
-                }
-
+                UpdateChart(Solutions);
+                UpdateSolversSolutionTabs(Solutions);
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -181,17 +161,6 @@ namespace InitialValueProblem
             {
                 SolversTabControl.SelectTab(i);
                 SolversTabControl.SelectedTab.Controls[$"SolverSolutionLabel{i}"].Text = ListToString(Solutions[i]);
-            }
-        }
-        private void UpdateTabsContent(List<List<Point>> Solutions) 
-        {
-            int index = 0;
-
-            foreach(List<Point> points in Solutions)
-            {
-                SolversTabControl.SelectedIndex = index;
-                
-                index++;
             }
         }
     }

@@ -37,6 +37,7 @@ namespace InitialValueProblem
             }
         }
         public Behavior Behavior { get; }
+
         // Constructors
         public Solver(string _Name, Behavior _behavior)
         {
