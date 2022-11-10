@@ -109,6 +109,7 @@ namespace InitialValueProblem
                 ViewModel.DeleteSolver(Name);
                 SolversTabControl.SelectedIndex = SolverIndex;
                 SolversTabControl.TabPages.Remove(SolversTabControl.SelectedTab);
+
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -140,6 +141,13 @@ namespace InitialValueProblem
         }
         private void UpdateChart(List<List<Point>> Solutions)
         {
+            /* TODO:
+                (V) Доработать графики
+                (V) Организовать смену цветов
+                (V) Оптимизировать вывод большого кол-ва точек
+                (?) Обновлять графики при удалении/добавлении Solver
+            */
+
             int SolutionIndex = 0;
             chart.Series.Clear();
             foreach (List<Point> Solution in Solutions)
@@ -147,10 +155,16 @@ namespace InitialValueProblem
                 chart.Series.Add(SolutionIndex.ToString());
                 chart.Series[SolutionIndex].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
                 chart.Series[SolutionIndex].BorderWidth = 3;
-                chart.Series[SolutionIndex].Color = palette[SolutionIndex % palette.Count];
-                foreach(Point Point in Solution)
+
+                chart.Series[SolutionIndex].BorderColor = palette[SolutionIndex % palette.Count];
+
+                int WhichDotToDraw = (Solution.Count > 100) ? Solution.Count / 100 : 1;
+
+
+                for (int i = 0; i < Solution.Count; i += WhichDotToDraw)
                 {
-                    this.chart.Series[SolutionIndex].Points.AddXY(Point.X, Point.Y);
+
+                    this.chart.Series[SolutionIndex].Points.AddXY(Solution[i].X, Solution[i].Y);
                 }
                 SolutionIndex++;
             }
