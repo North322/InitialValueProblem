@@ -83,42 +83,6 @@
             this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
-            // SolversTabControl
-            // 
-            this.SolversTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SolversTabControl.Controls.Add(this.tabPage1);
-            this.SolversTabControl.Controls.Add(this.tabPage2);
-            this.SolversTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.SolversTabControl.Location = new System.Drawing.Point(5, 499);
-            this.SolversTabControl.Margin = new System.Windows.Forms.Padding(5);
-            this.SolversTabControl.Name = "SolversTabControl";
-            this.SolversTabControl.SelectedIndex = 0;
-            this.SolversTabControl.Size = new System.Drawing.Size(1117, 191);
-            this.SolversTabControl.TabIndex = 0;
-            this.SolversTabControl.TabStop = false;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1109, 158);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1109, 158);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // NavigationLayout
             // 
             this.NavigationLayout.ColumnCount = 1;
@@ -665,6 +629,7 @@
             this.SolversTabControl.SelectedIndex = 0;
             this.SolversTabControl.Size = new System.Drawing.Size(1117, 191);
             this.SolversTabControl.TabIndex = 0;
+            this.SolversTabControl.TabStop = false;
             // 
             // InitialValueProblemView
             // 

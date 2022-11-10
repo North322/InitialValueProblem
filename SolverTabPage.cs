@@ -12,10 +12,11 @@ namespace InitialValueProblem
         public Label SolverNameLabel { get; }
         public Label SolverTypeLabel { get; }
         public Label SolverBehaviorLabel { get; }
-        public Label SolverSolutionLabel { get; }
+        public TextBox SolverSolutionTextBox { get; }
 
         public SolverTabPage(string _solverName, string _solverType, string _solverBehavior, string _solverSolution, int _tabIndex)
         {
+            this.Text = _solverName;
             Label SolverNameDescriptionLabel = new Label
             {
                 AutoSize = true,
@@ -59,7 +60,7 @@ namespace InitialValueProblem
             SolverNameLabel = new Label
             {
                 AutoSize = true,
-                Location = new System.Drawing.Point(40, 30),
+                Location = new System.Drawing.Point(160, 30),
                 Name = $"solverNameLabel{_tabIndex}",
                 TabIndex = _tabIndex,
                 Text = _solverName
@@ -69,7 +70,7 @@ namespace InitialValueProblem
             SolverTypeLabel = new Label
             {
                 AutoSize = true,
-                Location = new System.Drawing.Point(40, 60),
+                Location = new System.Drawing.Point(160, 60),
                 Name = $"solverTypeLabel{_tabIndex}",
                 TabIndex = _tabIndex,
                 Text = _solverType
@@ -79,22 +80,27 @@ namespace InitialValueProblem
             SolverBehaviorLabel = new Label
             {
                 AutoSize = true,
-                Location = new System.Drawing.Point(40, 90),
+                Location = new System.Drawing.Point(160, 90),
                 Name = $"solverBehaviorLabel{_tabIndex}",
                 TabIndex = _tabIndex,
                 Text = _solverBehavior
             };
             this.Controls.Add(SolverBehaviorLabel);
 
-            SolverSolutionLabel = new Label
+            SolverSolutionTextBox = new TextBox
             {
                 AutoSize = true,
-                Location = new System.Drawing.Point(465, 30),
+                Location = new System.Drawing.Point(600, 30),
+                Multiline = true,
+                ScrollBars = ScrollBars.Both,
+                Width = 480,
+                Height = 100,
                 Name = $"solverSolutionLabel{_tabIndex}",
                 TabIndex = _tabIndex,
-                Text = _solverSolution
+                Text = _solverSolution,
+                ReadOnly = true
             };
-            this.Controls.Add(SolverSolutionLabel);
+            this.Controls.Add(SolverSolutionTextBox);
         }
     }
 }

@@ -14,6 +14,30 @@ namespace InitialValueProblem
 {
     public partial class InitialValueProblemView : Form
     {
+        static public string GetEnumDescription(Enum value)
+        {
+            FieldInfo FieldInfo = value.GetType().GetField(value.ToString());
+
+            DescriptionAttribute[] attributes = FieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
+
+            if (attributes != null && attributes.Any())
+            {
+                return attributes.First().Description;
+            }
+
+            return value.ToString();
+        }
+        public static string ListToString(List<Point> List)
+        {
+            string result = "";
+            int i = 0;
+            foreach (Point point in List)
+            {
+                result += $"x{i}: {point.X}  y{i}: {point.Y}\r\n";
+                i++;
+            }
+            return result;
+        }
         public InitialValueProblemViewModel ViewModel { get; }
         public InitialValueProblemView()
         {
@@ -53,8 +77,8 @@ namespace InitialValueProblem
                 Behavior Behavior = (Behavior) Convert.ToByte(BehaviorComboBox.SelectedIndex);
 
                 ViewModel.AddSolver(Name, Type, Behavior);
-                SolverTabPage SolverTabPage = new SolverTabPage(Name, TypeComboBox.GetItemText(TypeComboBox.SelectedIndex), 
-                    BehaviorComboBox.GetItemText(BehaviorComboBox.SelectedIndex), "", SolversTabControl.TabPages.Count); 
+                SolverTabPage SolverTabPage = new SolverTabPage(Name, GetEnumDescription(Type), 
+                    GetEnumDescription(Behavior), "", SolversTabControl.TabPages.Count); 
                 SolversTabControl.TabPages.Add(SolverTabPage);
             }
             catch (Exception ex)
@@ -97,11 +121,10 @@ namespace InitialValueProblem
 
                 foreach (Point point in Solutions[index])
                 {
-                    Console.WriteLine($"x{i}: {point.X}, y{i}: {point.Y}");
-
                     this.chart.Series[0].Points.AddXY(point.X, point.Y);
                     i++;
                 }
+                UpdateChart(Solutions);
                 UpdateSolversSolutionTabs(Solutions);
             } catch (Exception ex)
             {
@@ -109,13 +132,28 @@ namespace InitialValueProblem
                 return;
             }
         }
-
+        private void UpdateChart(List<List<Point>> Solutions)
+        {
+            int SolutionIndex = 0;
+            chart.Series.Clear();
+            foreach (List<Point> points in Solutions)
+            {
+                chart.Series.Add(SolutionIndex.ToString());
+                chart.Series[SolutionIndex].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+                chart.Series[SolutionIndex].BorderWidth = 3;
+                foreach(Point point in points)
+                {
+                    this.chart.Series[SolutionIndex].Points.AddXY(point.X, point.Y);
+                }
+                SolutionIndex++;
+            }
+        }
         private void UpdateSolversSolutionTabs(List<List<Point>> Solutions)
         {
             for (int i = 0; i < SolversTabControl.TabCount; i++)
             {
                 SolversTabControl.SelectTab(i);
-                //SolversTabControl.SelectedTab.Controls["SolverSolutionLabel"] = ListToString(Solutions[i]);
+                SolversTabControl.SelectedTab.Controls[$"SolverSolutionLabel{i}"].Text = ListToString(Solutions[i]);
             }
         }
         private void UpdateTabsContent(List<List<Point>> Solutions) 

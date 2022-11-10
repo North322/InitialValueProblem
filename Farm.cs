@@ -22,6 +22,7 @@ namespace InitialValueProblem
             try
             {
                 this.FindSolverByName(solver.Name);
+                throw new ApplicationException("There is already such solver!");
             }
             catch (ArgumentException)
             {
