@@ -4,8 +4,22 @@ using System.ComponentModel;
 
 namespace InitialValueProblem
 {
-    public enum Behavior : byte { FinishAtTheRightBorder = 1, FinishAfterRightBorder, FinishBeforeRightBorder };
-    public enum Type : byte { EulerSolver = 1, HoinSolver };
+    public enum Behavior : byte
+    {
+        [Description("Finish at the right border")]
+        FinishAtTheRightBorder = 0,
+        [Description("Finish after right border")]
+        FinishAfterRightBorder,
+        [Description("Finish before right border")]
+        FinishBeforeRightBorder
+    };
+    public enum Type : byte
+    {
+        [Description("Euler solver")]
+        EulerSolver = 0,
+        [Description("Hoin solver")]
+        HoinSolver
+    };
     public abstract class Solver
     {
         // Class fields 
@@ -28,7 +42,7 @@ namespace InitialValueProblem
         {
             Name = _Name;
             Behavior = _behavior;
-        } 
+        }
         // Methods
         public abstract List<Point> Solve(InitialValueProblem Task);
     }
