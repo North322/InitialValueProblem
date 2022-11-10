@@ -55,7 +55,7 @@ namespace InitialValueProblem
         // Methods
         public double CountFunctionValue(double Xi, double Yi)
         {
-            return A*Math.Sin(Math.Exp((Xi + Yi) * B) * Math.PI * C / 180);
+            return A * Math.Sin((Xi + Yi) * B * Math.PI * C / 180);
         }
     }
 }

@@ -125,8 +125,8 @@ namespace InitialValueProblem
                     t = Convert.ToDouble(tTextBox.Text),
                     h = Convert.ToDouble(hTextBox.Text),
                     a = Convert.ToDouble(aTextBox.Text),
-                    b = Convert.ToDouble(bTextBox.Text),
-                    c = Convert.ToDouble(cTextBox.Text);
+                    b = Convert.ToDouble(cTextBox.Text),
+                    c = Convert.ToDouble(bTextBox.Text);
 
                 List<List<Point>> Solutions = ViewModel.SolveTask(new InitialValueProblem(y0, t0, t, h, a, b, c));
                 
@@ -179,6 +179,11 @@ namespace InitialValueProblem
                 SolversTabControl.SelectTab(i);
                 SolversTabControl.SelectedTab.Controls[$"SolverSolutionLabel{i}"].Text = ListToString(Solutions[i]);
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

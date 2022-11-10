@@ -105,7 +105,7 @@ namespace InitialValueProblem
                 Location = new System.Drawing.Point(600, 30),
                 Multiline = true,
                 ScrollBars = ScrollBars.Both,
-                Width = 480,
+                Width = 500,
                 Height = 100,
                 Name = $"solverSolutionLabel{_tabIndex}",
                 TabIndex = _tabIndex,
