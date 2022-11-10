@@ -53,12 +53,9 @@ namespace InitialValueProblem
                 Behavior Behavior = (Behavior) Convert.ToByte(BehaviorComboBox.SelectedIndex);
 
                 ViewModel.AddSolver(Name, Type, Behavior);
-
-                //SolverTabPage SolverTabPage = new SolverTabPage(); 
-
-                //SolverTabPage SolverTabPage = new SolverTabPage();  TODO: 
-
-                //SolversTabControl.TabPages.Add(SolverTabPage);
+                SolverTabPage SolverTabPage = new SolverTabPage(Name, TypeComboBox.GetItemText(TypeComboBox.SelectedIndex), 
+                    BehaviorComboBox.GetItemText(BehaviorComboBox.SelectedIndex), "", SolversTabControl.TabPages.Count); 
+                SolversTabControl.TabPages.Add(SolverTabPage);
             }
             catch (Exception ex)
             {
@@ -105,18 +102,22 @@ namespace InitialValueProblem
                     this.chart.Series[0].Points.AddXY(point.X, point.Y);
                     i++;
                 }
+                UpdateSolversSolutionTabs(Solutions);
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
-
-            
-
-
         }
 
+        private void UpdateSolversSolutionTabs(List<List<Point>> Solutions)
+        {
+            for (int i = 0; i < SolversTabControl.TabCount; i++)
+            {
+                SolversTabControl.SelectTab(i);
+                //SolversTabControl.SelectedTab.Controls["SolverSolutionLabel"] = ListToString(Solutions[i]);
+            }
+        }
         private void UpdateTabsContent(List<List<Point>> Solutions) 
         {
             int index = 0;
