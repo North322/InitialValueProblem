@@ -17,7 +17,7 @@ namespace InitialValueProblem
     public partial class InitialValueProblemView : Form
     {
         public InitialValueProblemViewModel ViewModel { get; }
-        public List<Color> palette { get; }
+        public List<Color> Palette { get; }
 
         static public string GetEnumDescription(Enum value)
         {
@@ -48,13 +48,13 @@ namespace InitialValueProblem
         {
             InitializeComponent();
             ViewModel = new InitialValueProblemViewModel();
-            palette = new List<Color>();
-            palette.Add(Color.FromArgb(0x003f5c));
-            palette.Add(Color.FromArgb(0x444e86));
-            palette.Add(Color.FromArgb(0x955196));
-            palette.Add(Color.FromArgb(0xdd5182));
-            palette.Add(Color.FromArgb(0xff6354));
-            palette.Add(Color.FromArgb(0xffa600));
+            Palette = new List<Color>();
+            Palette.Add(Color.FromArgb(0x003f5c));
+            Palette.Add(Color.FromArgb(0x444e86));
+            Palette.Add(Color.FromArgb(0x955196));
+            Palette.Add(Color.FromArgb(0xdd5182));
+            Palette.Add(Color.FromArgb(0xff6354));
+            Palette.Add(Color.FromArgb(0xffa600));
             BehaviorComboBox.SelectedIndex = 0;
             TypeComboBox.SelectedIndex = 0;
         }
