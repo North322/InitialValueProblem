@@ -31,6 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitialValueProblemView));
             this.NavigationLayout = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AddSolverPanel = new System.Windows.Forms.Panel();
@@ -698,9 +699,12 @@
             series1.BorderWidth = 3;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.Red;
+            series1.Color = System.Drawing.Color.White;
+            series1.EmptyPointStyle.LabelForeColor = System.Drawing.Color.Transparent;
+            series1.LabelForeColor = System.Drawing.Color.Transparent;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = " ";
+            series1.ShadowColor = System.Drawing.Color.White;
             this.chart.Series.Add(series1);
             this.chart.Size = new System.Drawing.Size(556, 486);
             this.chart.TabIndex = 3;
@@ -763,6 +767,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1132, 699);
             this.Controls.Add(this.MainLayoutPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1148, 738);
             this.Name = "InitialValueProblemView";
             this.Text = "Initial value problem";
