@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Linq;
 
 namespace InitialValueProblem
@@ -92,24 +93,34 @@ namespace InitialValueProblem
                 this.chart.Series[0].Points.Clear();
                 Farm Farms = new Farm();
 
-                int i = 0, index = ViewModel.FindSolverByName(name);
+                int i = 0;
 
-                foreach (Point point in Solutions[index])
+                int SeriesCount = this.chart.Series.Count;
+                // MessageBox.Show(SeriesCount.ToString());
+
+
+                Series series12= new Series();
+                series12.ChartType = SeriesChartType.Spline;
+                series12.BorderWidth = 3;
+
+                this.chart.Series.Add(series12);
+
+
+                for (i = 0; i < SeriesCount; i++)
                 {
-                    Console.WriteLine($"x{i}: {point.X}, y{i}: {point.Y}");
+                    int index = ViewModel.FindSolverByName(name);
 
-                    this.chart.Series[0].Points.AddXY(point.X, point.Y);
-                    i++;
+                    foreach (Point point in Solutions[index])
+                    {
+                        this.chart.Series[0].Points.AddXY(point.X, point.Y);
+                    }
                 }
+
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
-
-            
-
 
         }
 

@@ -4,7 +4,7 @@ using System;
 namespace InitialValueProblem
 {
     public enum Behavior : byte { FinishAtTheRightBorder = 1, FinishAfterRightBorder, FinishBeforeRightBorder };
-    public enum Type : byte { EulerSolver = 1, HoinSolver };
+    public enum Type : byte { EulerSolver = 0, HoinSolver = 1};
     public abstract class Solver
     {
         // Class fields 
