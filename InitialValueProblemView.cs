@@ -188,7 +188,18 @@ namespace InitialValueProblem
             for (int i = 0; i < SolversTabControl.TabCount; i++)
             {
                 SolversTabControl.SelectTab(i);
-                SolversTabControl.SelectedTab.Controls[$"SolverSolutionLabel{i}"].Text = ListToString(Solutions[i]);
+                try
+                {
+                    SolversTabControl.SelectedTab.Controls[$"SolverSolutionLabel{i}"].Text = ListToString(Solutions[i]);
+                }
+                catch (NullReferenceException)
+                {
+                    continue;
+                }
+                catch (Exception ex)
+                { 
+                    MessageBox.Show(ex.Message, "Error occured", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                }
             }
         }
     }
