@@ -13,6 +13,11 @@ namespace InitialValueProblem
 
         public double T0 { get; }
 
+        public double A { get; }
+
+        public double B { get; }
+
+        public double C { get; }
         public double T
         {
             get { return t; }
@@ -35,19 +40,22 @@ namespace InitialValueProblem
         }
 
         // Constructors
-        public InitialValueProblem(double _Y0, double _T0, double _T, double _H)
+        public InitialValueProblem(double _Y0, double _T0, double _T, 
+            double _H, double _A, double _B, double _C)
         {
             Y0 = _Y0;
             T0 = _T0;
             T = _T;
             H = _H;
+            A = _A;
+            B = _B;
+            C = _C;
         }
 
-        //TODO 
         // Methods
         public double CountFunctionValue(double Xi, double Yi)
         {
-            return Math.Sin((Xi + Yi) * Math.PI / 180);
+            return A*Math.Sin(Math.Exp((Xi + Yi) * B) * Math.PI * C / 180);
         }
     }
 }

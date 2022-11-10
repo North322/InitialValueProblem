@@ -120,12 +120,15 @@ namespace InitialValueProblem
         {
             try
             {
-                double y0 = Convert.ToDouble(y0TextBox.Text), 
-                    t0 = Convert.ToDouble(t0TextBox.Text), 
-                    t = Convert.ToDouble(tTextBox.Text), 
-                    h = Convert.ToDouble(hTextBox.Text);
+                double y0 = Convert.ToDouble(y0TextBox.Text),
+                    t0 = Convert.ToDouble(t0TextBox.Text),
+                    t = Convert.ToDouble(tTextBox.Text),
+                    h = Convert.ToDouble(hTextBox.Text),
+                    a = Convert.ToDouble(aTextBox.Text),
+                    b = Convert.ToDouble(bTextBox.Text),
+                    c = Convert.ToDouble(cTextBox.Text);
 
-                List<List<Point>> Solutions = ViewModel.SolveTask(new InitialValueProblem(y0, t0, t, h));
+                List<List<Point>> Solutions = ViewModel.SolveTask(new InitialValueProblem(y0, t0, t, h, a, b, c));
                 
                 this.chart.Series[0].Points.Clear();
                 Farm Farms = new Farm();
