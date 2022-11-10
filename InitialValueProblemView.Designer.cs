@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.NavigationLayout = new System.Windows.Forms.TableLayoutPanel();
             this.AddSolverNavButton = new System.Windows.Forms.Button();
             this.DeleteSolverNavButton = new System.Windows.Forms.Button();
@@ -165,8 +165,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.SolveTaskPanel);
             this.panel1.Controls.Add(this.AddSolverPanel);
+            this.panel1.Controls.Add(this.SolveTaskPanel);
             this.panel1.Controls.Add(this.DeleteSolverPanel);
             this.panel1.Location = new System.Drawing.Point(3, 129);
             this.panel1.Name = "panel1";
@@ -408,9 +408,9 @@
             this.BehaviorComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BehaviorComboBox.FormattingEnabled = true;
             this.BehaviorComboBox.Items.AddRange(new object[] {
-            "Finish at the left border",
-            "Finish after left border",
-            "Finish before left border"});
+            "Finish at the right border",
+            "Finish after right border",
+            "Finish before right border"});
             this.BehaviorComboBox.Location = new System.Drawing.Point(116, 157);
             this.BehaviorComboBox.Name = "BehaviorComboBox";
             this.BehaviorComboBox.Size = new System.Drawing.Size(353, 33);
@@ -588,16 +588,16 @@
             this.chart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea12.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea12);
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
             this.chart.Location = new System.Drawing.Point(559, 6);
             this.chart.Name = "chart";
-            series12.BorderWidth = 3;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series12.Color = System.Drawing.Color.Red;
-            series12.Name = "Series1";
-            this.chart.Series.Add(series12);
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.Red;
+            series1.Name = "Series1";
+            this.chart.Series.Add(series1);
             this.chart.Size = new System.Drawing.Size(554, 476);
             this.chart.TabIndex = 3;
             this.chart.TabStop = false;
