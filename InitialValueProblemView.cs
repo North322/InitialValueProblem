@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -15,11 +16,44 @@ namespace InitialValueProblem
 {
     public partial class InitialValueProblemView : Form
     {
+        static public string GetEnumDescription(Enum value)
+        {
+            FieldInfo FieldInfo = value.GetType().GetField(value.ToString());
+
+            DescriptionAttribute[] attributes = FieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false) as DescriptionAttribute[];
+
+            if (attributes != null && attributes.Any())
+            {
+                return attributes.First().Description;
+            }
+
+            return value.ToString();
+        }
+        public static string ListToString(List<Point> List)
+        {
+            string result = "";
+            int i = 0;
+            foreach (Point point in List)
+            {
+                result += $"x{i}: {point.X}  y{i}: {point.Y}\r\n";
+                i++;
+            }
+            return result;
+        }
         public InitialValueProblemViewModel ViewModel { get; }
+
+        public List<Color> palette { get; }
         public InitialValueProblemView()
         {
             InitializeComponent();
             ViewModel = new InitialValueProblemViewModel();
+            palette = new List<Color>();
+            palette.Add(Color.FromArgb(0x003f5c));
+            palette.Add(Color.FromArgb(0x444e86));
+            palette.Add(Color.FromArgb(0x955196));
+            palette.Add(Color.FromArgb(0xdd5182));
+            palette.Add(Color.FromArgb(0xff6354));
+            palette.Add(Color.FromArgb(0xffa600));
             BehaviorComboBox.SelectedIndex = 0;
             TypeComboBox.SelectedIndex = 0;
         }
@@ -54,8 +88,9 @@ namespace InitialValueProblem
                 Behavior Behavior = (Behavior) Convert.ToByte(BehaviorComboBox.SelectedIndex);
 
                 ViewModel.AddSolver(Name, Type, Behavior);
-                //SolverTabPage SolverTabPage = new SolverTabPage(); 
-                //SolversTabControl.TabPages.Add(SolverTabPage);
+                SolverTabPage SolverTabPage = new SolverTabPage(Name, GetEnumDescription(Type), 
+                    GetEnumDescription(Behavior), "", SolversTabControl.TabPages.Count); 
+                SolversTabControl.TabPages.Add(SolverTabPage);
             }
             catch (Exception ex)
             {
@@ -123,7 +158,31 @@ namespace InitialValueProblem
             }
 
         }
-
+        private void UpdateChart(List<List<Point>> Solutions)
+        {
+            int SolutionIndex = 0;
+            chart.Series.Clear();
+            foreach (List<Point> Solution in Solutions)
+            {
+                chart.Series.Add(SolutionIndex.ToString());
+                chart.Series[SolutionIndex].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+                chart.Series[SolutionIndex].BorderWidth = 3;
+                chart.Series[SolutionIndex].Color = palette[SolutionIndex % palette.Count];
+                foreach(Point Point in Solution)
+                {
+                    this.chart.Series[SolutionIndex].Points.AddXY(Point.X, Point.Y);
+                }
+                SolutionIndex++;
+            }
+        }
+        private void UpdateSolversSolutionTabs(List<List<Point>> Solutions)
+        {
+            for (int i = 0; i < SolversTabControl.TabCount; i++)
+            {
+                SolversTabControl.SelectTab(i);
+                SolversTabControl.SelectedTab.Controls[$"SolverSolutionLabel{i}"].Text = ListToString(Solutions[i]);
+            }
+        }
         private void UpdateTabsContent(List<List<Point>> Solutions) 
         {
             int index = 0;
@@ -134,26 +193,6 @@ namespace InitialValueProblem
                 
                 index++;
             }
-        }
-
-        private void y0Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void t0Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddSolverPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void InitialValueProblemView_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

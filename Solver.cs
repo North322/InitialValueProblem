@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
 using System;
+using System.ComponentModel;
 
 namespace InitialValueProblem
 {
     public enum Behavior : byte { FinishAtTheRightBorder = 1, FinishAfterRightBorder, FinishBeforeRightBorder };
-    public enum Type : byte { EulerSolver = 0, HoinSolver = 1};
+    public enum Type : byte { EulerSolver = 1, HoinSolver };
     public abstract class Solver
     {
         // Class fields 
-        private Behavior behavior;
         private string name;
-    
+
         // Properties
         public string Name
         {
@@ -22,15 +22,12 @@ namespace InitialValueProblem
                 name = value;
             }
         }
-
         public Behavior Behavior { get; }
-
         // Constructors
-        public Solver(string _Name, Behavior _Behavior)
+        public Solver(string _Name, Behavior _behavior)
         {
-            
-            Behavior = _Behavior;
             Name = _Name;
+            Behavior = _behavior;
         } 
         // Methods
         public abstract List<Point> Solve(InitialValueProblem Task);
