@@ -79,6 +79,7 @@
             this.MainLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.SolversTabControl = new System.Windows.Forms.TabControl();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.NavigationLayout.SuspendLayout();
             this.panel1.SuspendLayout();
             this.AddSolverPanel.SuspendLayout();
@@ -124,8 +125,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.AddSolverPanel);
             this.panel1.Controls.Add(this.SolveTaskPanel);
+            this.panel1.Controls.Add(this.AddSolverPanel);
             this.panel1.Controls.Add(this.DeleteSolverPanel);
             this.panel1.Location = new System.Drawing.Point(3, 132);
             this.panel1.Name = "panel1";
@@ -298,6 +299,7 @@
             this.SolveTaskPanel.Controls.Add(this.piLabel);
             this.SolveTaskPanel.Controls.Add(this.numberLabel);
             this.SolveTaskPanel.Controls.Add(this.bracketLabel);
+            this.SolveTaskPanel.Controls.Add(this.label1);
             this.SolveTaskPanel.Location = new System.Drawing.Point(14, 7);
             this.SolveTaskPanel.Name = "SolveTaskPanel";
             this.SolveTaskPanel.Size = new System.Drawing.Size(525, 335);
@@ -551,11 +553,11 @@
             // 
             this.bracketLabel.AutoSize = true;
             this.bracketLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.bracketLabel.Location = new System.Drawing.Point(387, 26);
+            this.bracketLabel.Location = new System.Drawing.Point(388, 27);
             this.bracketLabel.Name = "bracketLabel";
-            this.bracketLabel.Size = new System.Drawing.Size(23, 31);
+            this.bracketLabel.Size = new System.Drawing.Size(92, 31);
             this.bracketLabel.TabIndex = 28;
-            this.bracketLabel.Text = ")";
+            this.bracketLabel.Text = "·(x+y))";
             // 
             // DeleteSolverPanel
             // 
@@ -761,6 +763,16 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(1121, 498);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.label1.Location = new System.Drawing.Point(46, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 31);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "y\' =";
+            // 
             // InitialValueProblemView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -842,6 +854,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label numberLabel;
         private System.Windows.Forms.Label bracketLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 
